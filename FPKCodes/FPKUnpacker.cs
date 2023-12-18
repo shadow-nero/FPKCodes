@@ -6,14 +6,6 @@ using System.Collections.Generic;
 
 namespace FpkCodes;
 
-public class DirectoryItem
-{
-    public string Nome { get; set; }
-    public uint Offset { get; set; }
-    public uint CompressedSize { get; set; }
-    public uint UncompressedSize { get; set; }
-}
-
 public class FPKUnpacker 
 {         
         public static void FPKExtract(string FPKFile, string Dest) {
@@ -63,7 +55,7 @@ public class FPKUnpacker
                             }
                         }
                     }
-					    FPKStream.Seek(item.Offset , SeekOrigin.Begin);
+					    FPKStream.Seek(item.Offset , SeekOrigin.Begin); 
 						
 						byte[] ByteCompressed = new byte[item.CompressedSize];
                         FPKStream.Read(ByteCompressed, 0, ByteCompressed.Length);

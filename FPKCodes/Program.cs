@@ -12,6 +12,8 @@ public static class Program
 {
 	public static void Main()
 	{
-	    FPKUnpacker.FPKExtract("0001.fpk","0001");
+	    //FPKUnpacker.FPKExtract("0000.fpk","0000_backup");
+		FPKPacker.FPKRepack("0000.fpk", "0000", "0000_repack.fpk");
+		
 	}
 }
