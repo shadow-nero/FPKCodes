@@ -72,13 +72,14 @@ public class FPKPacker
 						
 						foreach (var item in directoryItemList) {	
 						    byte Padding16 = 0x10;
+							uint crc32folder = 0;
 							
-							using (FileStream TempFile = new FileStream(Path.Combine(Folder,item.Nome), FileMode.Open, FileAccess.Read))
-                        {
-							
-                            byte[] BodyFile = new byte[TempFile.Length];
-                            TempFile.Read(BodyFile, 0, BodyFile.Length);
-							uint crc32folder = CRC32.CalCRC32(BodyFile);
+							using (FileStream TempFile = new FileStream(Path.Combine(Folder,item.Nome), FileMode.Open, FileAccess.Read)) {
+								    byte[] BodyFile = new byte[TempFile.Length];
+									TempFile.Read(BodyFile, 0, BodyFile.Length);
+									crc32folder = CRC32.CalCRC32(BodyFile);
+									
+									
 							Console.WriteLine(crc32folder);
 							Console.WriteLine(item.crc32comp);
 							item.Offset = (uint)NEWFPK.Position;
@@ -88,7 +89,7 @@ public class FPKPacker
 							FPKBinaryWriter.Write(item.DataComp, 0, item.DataComp.Length);
 									
 							} else {
-							Console.WriteLine("comorir");
+							Console.WriteLine("Compressing File...");
 							PRSCompressor compressor = new PRSCompressor(BodyFile);
 							byte[] compressedData = compressor.Compress();
 							
@@ -98,16 +99,13 @@ public class FPKPacker
 							item.UncompressedSize = (uint)BodyFile.Length;
 							
 							}
-							
-							Console.WriteLine($"Nome: {item.Nome}, Offset: {item.Offset}, Compressed Size: {item.CompressedSize}, Uncompressed Size: {item.UncompressedSize}");
+							}
+							Console.WriteLine($"Nome: {item.Nome}, Offset: {item.Offset}, Compressed Size: {item.CompressedSize}, Uncompressed Size: {item.UncompressedSize}, CRC32 Orinal: {item.crc32comp}, CRC32 New: {crc32folder}");
 							Console.WriteLine("----------------------------------");
 							
 							if (NEWFPK.Position % Padding16 != 0)
                                 while (NEWFPK.Position % Padding16 != 0)
                                     FPKBinaryWriter.Write((byte)0x0);
-							
-							
-                        }
 						
 							}
 						
@@ -128,7 +126,7 @@ public class FPKPacker
 					
 							}
 						}
-						Console.WriteLine("Foi");
+						Console.WriteLine("Repacked successfully!!!");
 	    //PRSUncompressor compressor = new PRSUncompressor(input, outputLength);
         }
 		}
