@@ -1,4 +1,4 @@
-um# This workflow uses actions that are not certified by GitHub.
+# This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
@@ -75,7 +75,7 @@ jobs:
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v17.8.3
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
