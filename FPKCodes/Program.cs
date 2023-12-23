@@ -22,6 +22,9 @@ namespace FpkCodes
 					case "-e":
 						OptionExtract(args);
 						break;
+					case "-f":
+						FateLba.FIX(args[1].ToString());
+						break;
 					default:
 						Console.WriteLine("Invalid option.");
 						break;
@@ -34,7 +37,8 @@ namespace FpkCodes
 			Console.WriteLine("FpkCodes");
 			Console.WriteLine("usage: FpkCodes -e <FPK path> <Folder that will extract");
 			Console.WriteLine("       FpkCodes -r <FPK path> <Folder with FPK files> <Name of new FPK>");
-		}
+            Console.WriteLine("       FpkCodes -f <iso path>");
+        }
 
 		public static void OptionExtract(string[] args)
 		{
