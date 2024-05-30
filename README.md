@@ -52,8 +52,5 @@ After modifying the FPK files, it's necessary to rebuild the ISO, placing each f
 - **tpu** - Wrote the original PRS uncompression algorithm.
 - **RupertAvery** - Wrote the original PRS compression algorithm.
 - **[Luigi Auriemma](https://aluigi.altervista.org/quickbms.htm)** - Ported PRS compression/uncompression algorithms to QuickBMS.
-- **[Nisto](https://github.com/Struggleton)** - For writing musyx-extract for sound file reading and writing.
-- **[Struggleton](https://github.com/Struggleton)** - For writing TXG2TPL for txg file reading and writing.
-- **[The Dueling Potato](https://github.com/mitchellhumphrey)** - For writing seq-kage for seq file reading and writing.
 - **[Nicholas Moser](https://github.com/NicholasMoser)** - Creator of GNTools; without him, this tool would not exist.
 
