@@ -35,7 +35,7 @@ namespace FpkCodes
 		public static void ShowOptions()
 		{
 			Console.WriteLine("FpkCodes");
-			Console.WriteLine("usage: FpkCodes -e <FPK path> <Folder that will extract");
+			Console.WriteLine("usage: FpkCodes -e <FPK path> <Folder that will extract>");
 			Console.WriteLine("       FpkCodes -r <FPK path> <Folder with FPK files> <Name of new FPK>");
             Console.WriteLine("       FpkCodes -f <iso path>");
         }
