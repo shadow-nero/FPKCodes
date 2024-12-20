@@ -39,13 +39,7 @@ Unlike other Eighting games, Fate Unlimited Codes has an integrity check in the 
 ## Creating an ISO
 
 After modifying the FPK files, it's necessary to rebuild the ISO, placing each file in its proper position, also known as LBA (Logical Block Addressing). To do this:
-
-       Open the ISO in UmdGen
-       Go to File -> File List -> Export
-       Make the necessary modifications in the ISO; when finished, do the following
-       Go to File -> File List -> Import -> Save the ISO
-       
-**If the new file exceeds the size of the original FPK file, the game will crash due to "size verification" of the LBA files. Currently, there's no publicly available tool that allows larger files while maintaining the client's integrity.**
+              FpkCodes.exe -f <ISO path>
 
 ## Special Thanks
 
