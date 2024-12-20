@@ -39,7 +39,10 @@ Unlike other Eighting games, Fate Unlimited Codes has an integrity check in the 
 ## Creating an ISO
 
 After modifying the FPK files, it's necessary to rebuild the ISO, placing each file in its proper position, also known as LBA (Logical Block Addressing). To do this:
-              FpkCodes.exe -f <ISO path>
+
+       FpkCodes.exe -f <ISO path>
+
+**Many thanks to gil-unx!!! without him this would not be possible**
 
 ## Special Thanks
 
@@ -47,4 +50,4 @@ After modifying the FPK files, it's necessary to rebuild the ISO, placing each f
 - **RupertAvery** - Wrote the original PRS compression algorithm.
 - **[Luigi Auriemma](https://aluigi.altervista.org/quickbms.htm)** - Ported PRS compression/uncompression algorithms to QuickBMS.
 - **[Nicholas Moser](https://github.com/NicholasMoser)** - Creator of GNTools; without him, this tool would not exist.
-
+- **[gil-unx]() responsible for creating the "fix ISO" code
